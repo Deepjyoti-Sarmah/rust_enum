@@ -32,6 +32,24 @@ fn main() {
 
     let localhost: IpAddrKind = IpAddrKind::v4(String::from(127, 0,0, 1));
 
+    // enum Option<T> {
+    //     Some(T),
+    //     None,
+    // }
+
+    // let some_number: Option<i32> = Some(5);
+    // let some_string: Option<&str> = Some("It's a string");
+    
+    // let absent_number: Option<i32> = None;
+
+    let x: i8 = 5;
+    let y: Option<i8> = Some(5);
+
+    // let sum: <i8 as Add<Option<i8>>>::Output = x + y;
+
+    // let sum: i8 = x + y.unwrap_or(default: 0);
+
+
 }
 
-fn route(ip_kind: IpAddrKind) {}
+// fn route(ip_kind: IpAddrKind) {}
