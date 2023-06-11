@@ -21,35 +21,35 @@
 //     address: String,
 // }
 
-#[derive(Debug)]
-enum UsState{
-    Alabama,
-    Alaska,
-    Arizona,
-    Arkansas,
-    California,
-}
+// #[derive(Debug)]
+// enum UsState{
+//     Alabama,
+//     Alaska,
+//     Arizona,
+//     Arkansas,
+//     California,
+// }
 
-enum Coin {
-    Penny,
-    Nickel,
-    Dime,
-    Quarter(UsState),
-}
+// enum Coin {
+//     Penny,
+//     Nickel,
+//     Dime,
+//     Quarter(UsState),
+// }
 
-fn value_in_cents(coin: Coin) -> u8 {
-    match coin {
-        Coin::Penny => 1,
-        Coin::Nickel => 5,
-        Coin::Dime => 10,
-        Coin::Quarter(state) => {
-            println!("State quater from {:?}!", state);
-            25
-        }
-    }
-}
+// fn value_in_cents(coin: Coin) -> u8 {
+//     match coin {
+//         Coin::Penny => 1,
+//         Coin::Nickel => 5,
+//         Coin::Dime => 10,
+//         Coin::Quarter(state) => {
+//             println!("State quater from {:?}!", state);
+//             25
+//         }
+//     }
+// }
 
-fn main() {
+// fn main() {
     // let four : IpAddrKind = IpAddrKind::v4;
     // let six : IpAddrKind = IpAddrKind::v6;
 
@@ -83,16 +83,16 @@ fn main() {
     // let six: Option<i32> = plus_one(five);
     // let none: Option<i32> = plus_one(None);
 
-    let some_value: Option<i32> = Some(3);
-    match some_value {
-        Some(3) => println!("three"),
-        _ => (),
-    }
+//     let some_value: Option<i32> = Some(3);
+//     match some_value {
+//         Some(3) => println!("three"),
+//         _ => (),
+//     }
     
-    if let Some(3) = some_value {
-        println!("three");
-    }
-}
+//     if let Some(3) = some_value {
+//         println!("three");
+//     }
+// }
 
 // fn route(ip_kind: IpAddrKind) {}
 
@@ -104,3 +104,18 @@ fn main() {
 //         _ => None
 //     }
 // }
+
+
+
+fn main() {
+    let opt: Option<String> = 
+        Some(String::from("Hello world"));
+    
+    // opt became &opt
+    match &opt {
+        Some(s) => println!("Some: {}", s),
+        None => println!("None!")
+    };
+    
+    println!("{:?}", opt);
+}
