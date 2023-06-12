@@ -107,15 +107,69 @@
 
 
 
-fn main() {
-    let opt: Option<String> = 
-        Some(String::from("Hello world"));
+// fn main() {
+//     let opt: Option<String> = 
+//         Some(String::from("Hello world"));
     
-    // opt became &opt
-    match &opt {
-        Some(s) => println!("Some: {}", s),
-        None => println!("None!")
-    };
+//     // opt became &opt
+//     match &opt {
+//         Some(s) => println!("Some: {}", s),
+//         None => println!("None!")
+//     };
     
-    println!("{:?}", opt);
+//     println!("{:?}", opt);
+// }
+
+//quizes
+// enum Location {
+//     Point(i32),
+//     Range(i32, i32)
+// }
+
+// fn main() {
+
+//     let l: Location = Location::Range(0, 5);  
+    
+//     let n = match l {
+//         Location::Point(_) => -1,
+//         Location::Range(_, n) => n,
+//         Location::Range(0, _) => 0,
+//         _ => -2
+//     };
+//     println!("{n}");
+// }
+// Each match is tried from top to bottom. Both the second and third pattern are applicable, so the second one is used.
+
+
+#[derive(Debug)]
+enum Either {
+    Left(usize),
+    Right(String)
 }
+
+
+fn main() {
+    let x = Either::Right(String::from("Hello world"));
+
+    let value = match x {
+        Either::Left(n) => n,
+        Either::Right(s) => s.len()
+    };
+
+    println!("{x:?} {value}");
+
+}
+
+// Context: The match arm Either::Right(s) moves the field s, so x cannot be used in the println.
+
+//quize
+// /// Makes a string to separate lines of text, 
+// /// returning a default if the provided string is blank
+// fn make_separator(user_str: &str) -> &str {
+//     if user_str == "" {
+//         let default = "=".repeat(10);
+//         &default
+//     } else {
+//         user_str
+//     }
+// }
